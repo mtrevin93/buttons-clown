@@ -17,3 +17,13 @@ export const getReservations = () => {
     return applicationState.reservations.map(reservation => ({...reservation})
     )
 }
+
+export const sendRequest = (userReservation) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userReservation)
+    }
+}

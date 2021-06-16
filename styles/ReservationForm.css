@@ -1,0 +1,16 @@
+.field {
+    display:flex;
+    flex-direction: column; 
+    }
+    #reservation {
+        margin: 0 2rem 0 2rem 0 2rem;
+        margin-top: 0.75em;
+        padding: 0.5rem;
+        background-color: steelblue;
+        color: peachpuff;
+        font-size: 1.1rem;
+    }
+    .label {
+        font-size: 20px;
+    }
+
