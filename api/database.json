@@ -1,14 +1,14 @@
 {
     "clowns": [],
     "completions": [],
-    "requests": [
+    "reservations": [
         {
             "id": 1,
             "parentName": "Karen",
-            "childName": "River",
+            "childName": "Kyle",
             "numOfChildren": "12",
             "address": "112 Grey Oak Dr.",
-            "reservationDate": "1213121",
+            "reservationDate": "August 3, 2021",
             "reservationLength": "2"
         }
     ]
