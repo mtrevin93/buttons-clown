@@ -1,12 +1,18 @@
-import { ButtonsAndLeslie } from "./ButtonsAndLeslie.js";
+import { ButtonsAndLollipop } from "./ButtonsAndLollipop.js";
 import { fetchReservations } from "./dataAccess.js";
 
 const mainContainer = document.querySelector("#mainContainer")
 
+mainContainer.addEventListener("stateChanged",
+
+customEvent => {
+    render()
+})
+
 const render = () => {
     fetchReservations().then(
         () => {
-            mainContainer.innerHTML = ButtonsAndLeslie()
+            mainContainer.innerHTML = ButtonsAndLollipop()
         }
     )
 }

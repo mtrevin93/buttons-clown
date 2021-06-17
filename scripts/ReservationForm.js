@@ -1,4 +1,4 @@
-import { sendRequest } from "./dataAccess.js"
+import { submitReservation } from "./dataAccess.js"
 
 const mainContainer = document.querySelector("#mainContainer")
 
@@ -20,7 +20,7 @@ mainContainer.addEventListener("click", clickEvent => {
        reservationLength: inputReservationLength
     }
 
-    sendRequest(dataToSendToAPI)
+    submitReservation(dataToSendToAPI)
 }
 })
 

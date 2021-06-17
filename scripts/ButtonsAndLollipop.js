@@ -1,7 +1,7 @@
 import { Reservations } from "./Reservations.js";
 import { ReservationForm } from "./ReservationForm.js";
 
-export const ButtonsAndLeslie = () => {
+export const ButtonsAndLollipop = () => {
     const htmlString = `
     <h1>Buttons and Leslie's Kid's Birthday Parties</h1>
     <section class="reservationForm">
