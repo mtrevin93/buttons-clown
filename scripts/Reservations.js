@@ -8,7 +8,12 @@ mainContainer.addEventListener("click", click => {
 })
 
 export const Reservations = () => {
-    const reservations = getReservations()
+    
+    const unsortedReservations = getReservations()
+    const reservations = unsortedReservations.sort((a, b) => {
+        return Math.abs(Date.now() - new Date(a.reservationDate)) - 
+        Math.abs(Date.now() -new Date(b.reservationDate))
+    })
     const reservationHTML = `<ul> ${reservations.map(
         (reservation) => 
         `<li>
