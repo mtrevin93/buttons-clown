@@ -1,4 +1,4 @@
-import { getReservations, deleteReservation, getClowns, completeReservation } from "./dataAccess.js";
+import { getReservations, deleteReservation, getClowns, completeReservation, getCompletions } from "./dataAccess.js";
 
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("reservation--")) {
@@ -16,7 +16,8 @@ mainContainer.addEventListener("change", click => {
         const completedGigReservationId = parseInt(reservationId)
         const dataToSendToAPI = {
             clownId: completedGigClownId,
-            partyId: completedGigReservationId
+            partyId: completedGigReservationId,
+            completionDate: Date.now().toString()
         }
         completeReservation(dataToSendToAPI)
         deleteReservation(parseInt(reservationId))
@@ -58,3 +59,23 @@ export const Reservations = () => {
 
       return reservationHTML
 }
+
+export const Completions = () => {
+        const unsortedCompletions = getCompletions()
+        const completions = unsortedCompletions.sort((a, b) => {
+            return Math.abs(Date.now() - new Date(a.completionDate)) - 
+            Math.abs(Date.now() -new Date(b.completionDate))
+        })
+        const clowns = getClowns()
+        const completionHTML = `<ul> ${completions.map(
+            (completion) => {
+                const myClown = clowns.find(clown => clown.id === completion.clownId)
+            return `<li>
+            Party clowned by ${myClown.name} on ${completion.completionDate.toString()}
+        </li>`
+    }
+        ).join("")
+    }
+     </ul>`
+          return completionHTML
+    }

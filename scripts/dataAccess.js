@@ -1,6 +1,7 @@
 const applicationState = {
     reservations: [],
-    clowns: []
+    clowns: [],
+    completions: []
 }
 const API = "http://localhost:8088"
 
@@ -25,6 +26,16 @@ export const fetchClowns = () => {
     )
 }
 
+export const fetchCompletions = () => {
+    return fetch(`${API}/completions`)
+    .then(response => response.json())
+    .then(
+        (completions) => {
+            applicationState.completions = completions
+        }
+    )
+}
+
 export const completeReservation = (clownId) => {
     const fetchOptions = {
         method: "POST",
@@ -44,6 +55,10 @@ export const completeReservation = (clownId) => {
 export const getReservations = () => {
     return applicationState.reservations.map(reservation => ({...reservation})
     )
+}
+
+export const getCompletions = () => {
+    return applicationState.completions.map(completion => ({...completion}))
 }
 
 export const submitReservation = (userReservation) => {

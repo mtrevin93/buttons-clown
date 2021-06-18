@@ -1,5 +1,6 @@
 import { Reservations } from "./Reservations.js";
 import { ReservationForm } from "./ReservationForm.js";
+import { Completions } from "./Reservations.js"
 
 export const ButtonsAndLollipop = () => {
     const htmlString = `
@@ -11,6 +12,9 @@ export const ButtonsAndLollipop = () => {
     <h2>Current Reservations</h2>
     ${Reservations()}
     </section>
+    <section class="completions">
+    <h2>Completed Events</h2>
+    ${Completions()}
     `
     return htmlString
 }
