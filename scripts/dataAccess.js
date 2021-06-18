@@ -1,5 +1,6 @@
 const applicationState = {
-    reservations: []
+    reservations: [],
+    clowns: []
 }
 const API = "http://localhost:8088"
 
@@ -12,6 +13,33 @@ export const fetchReservations = () => {
             }
         )
 }
+
+export const fetchClowns = () => {
+    return fetch(`${API}/clowns`)
+    .then(response => response.json())
+    .then(
+        (clowns) => {
+            applicationState.clowns = clowns
+            
+        }
+    )
+}
+
+export const completeReservation = (clownId) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(clownId)
+    }
+    return fetch(`${API}/completions`, fetchOptions)
+    .then(response => response.json())
+    .then(
+        () =>
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+)}
+
 
 export const getReservations = () => {
     return applicationState.reservations.map(reservation => ({...reservation})
@@ -41,5 +69,10 @@ export const deleteReservation = (id) => {
             () => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     }
+    )
+}
+
+export const getClowns = () => {
+    return applicationState.clowns.map(clown => ({...clown})
     )
 }

@@ -1,5 +1,5 @@
 import { ButtonsAndLollipop } from "./ButtonsAndLollipop.js";
-import { fetchReservations } from "./dataAccess.js";
+import { fetchReservations, fetchClowns } from "./dataAccess.js";
 
 const mainContainer = document.querySelector("#mainContainer")
 
@@ -10,10 +10,14 @@ customEvent => {
 })
 
 const render = () => {
-    fetchReservations().then(
+    fetchReservations()
+    fetchClowns()
+    .then(
         () => {
             mainContainer.innerHTML = ButtonsAndLollipop()
         }
     )
 }
 render()
+
+

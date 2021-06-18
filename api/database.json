@@ -1,69 +1,30 @@
 {
-  "clowns": [],
-  "completions": [],
+  "clowns": [
+    {
+      "id": 1,
+      "name": "Buttons"
+    },
+    {
+      "id": 2,
+      "name": "Lollipop"
+    }
+  ],
+  "completions": [
+    {
+      "clownId": 2,
+      "partyId": 3,
+      "id": 1
+    }
+  ],
   "reservations": [
     {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2017-11-01",
-      "reservationLength": "",
-      "id": 1
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2018-12-02",
-      "reservationLength": "",
+      "parentName": "Cindee",
+      "childName": "Kyleee",
+      "numOfChildren": "6",
+      "address": "113 clown street",
+      "reservationDate": "2021-08-08",
+      "reservationLength": "4",
       "id": 2
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2021-13-08",
-      "reservationLength": "",
-      "id": 3
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2021-12-09",
-      "reservationLength": "",
-      "id": 4
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2021-08-08",
-      "reservationLength": "",
-      "id": 5
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2022-01-01",
-      "reservationLength": "",
-      "id": 6
-    },
-    {
-      "parentName": "",
-      "childName": "",
-      "numOfChildren": "",
-      "address": "",
-      "reservationDate": "2021-08-08",
-      "reservationLength": "",
-      "id": 7
     }
   ]
 }
